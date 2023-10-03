@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"go-make-log/config"
 	"go-make-log/makeLog"
 	"log"
 	"os"
@@ -10,8 +11,8 @@ import (
 func main() {
 	defer log.Println("Done")
 
-	args := parseArguments()
-	initializeLogging(args.logTimestamps)
+	args := config.ParseArguments()
+	initializeLogging(args.LogTimestamps)
 	validateUsage(args)
 
 	err := run(args)
@@ -21,10 +22,10 @@ func main() {
 	}
 }
 
-func run(args arguments) error {
+func run(args config.Arguments) error {
 	log.Println("Running:", os.Args)
 
-	return makeLog.MakeLog()
+	return makeLog.MakeLog(args)
 }
 
 func initializeLogging(logTimestamps bool) {
@@ -36,7 +37,7 @@ func initializeLogging(logTimestamps bool) {
 	log.SetOutput(os.Stdout)
 }
 
-func validateUsage(args arguments) {
+func validateUsage(args config.Arguments) {
 	var invalidUsage bool
 
 	/*
