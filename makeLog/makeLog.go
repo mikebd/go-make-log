@@ -1,15 +1,16 @@
-package main
+package makeLog
 
 import (
 	"github.com/xyproto/randomstring"
+	"go-make-log/makeLog/logLine"
 	"log"
 )
 
-func makeLog(args arguments) error {
+func MakeLog() error {
 	randomstring.Seed()
 	// TODO: Argument for minimum size of log file to create
 	for i := 1; i < 500; i++ {
-		log.Println(jsonLogLine())
+		log.Println(logLine.JsonLogLine())
 	}
 	return nil
 }

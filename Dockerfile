@@ -5,7 +5,8 @@ WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 
-COPY main/*.go ./main/
+ADD main ./main
+ADD makeLog ./makeLog
 
 RUN go build -o go-make-log ./main
 

@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"go-make-log/makeLog"
 	"log"
 	"os"
 )
@@ -23,7 +24,7 @@ func main() {
 func run(args arguments) error {
 	log.Println("Running:", os.Args)
 
-	return makeLog(args)
+	return makeLog.MakeLog()
 }
 
 func initializeLogging(logTimestamps bool) {

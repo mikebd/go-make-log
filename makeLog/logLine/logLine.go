@@ -1,4 +1,4 @@
-package main
+package logLine
 
 import (
 	"encoding/json"
@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func jsonLogLine() string {
+func JsonLogLine() string {
 	// TODO: Randomize level
 	// TODO: Randomize message
 	result, _ := json.Marshal(map[string]interface{}{
