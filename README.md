@@ -1,12 +1,13 @@
-# go-playground
-A playground for Golang experimentation
+# go-make-log
+
+Generate fake application log files (e.g. as input to log processors)
 
 ## Running in Docker
 
-* `docker build -t go-playground .` - Build the Docker image
-* `docker run go-playground` - Run without arguments<br/>
+* `docker build -t go-make-log .` - Build the Docker image
+* `docker run go-make-log` - Run without arguments<br/>
   OR <br/>
-  `docker run go-playground /app/go-playground <args>` - Run with the given arguments
+  `docker run go-make-log /app/go-make-log <args>` - Run with the given arguments
 
 ## Running Locally
 
