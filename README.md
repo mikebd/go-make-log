@@ -17,4 +17,4 @@ Generate fake application log files (e.g. as input to log processors)
 |------------------|---------------------------|
 | `-h` \| `--help` | Print the help message    |
 | `-lt`            | Log with timestamps (UTC) |
-| `-o`             | Output filename           |
+| `-o filename`    | Output filename           |
