@@ -12,10 +12,10 @@ const (
 	maxWordsPerMessage   = 15
 )
 
-var random *rand.Rand
+var randomMessage *rand.Rand
 
 func init() {
-	random = rand.New(rand.NewSource(time.Now().UTC().UnixNano()))
+	randomMessage = rand.New(rand.NewSource(time.Now().UTC().UnixNano()))
 	randomstring.Seed()
 }
 
@@ -28,7 +28,7 @@ func message() string {
 		if i > 0 {
 			sb.WriteByte(' ')
 		}
-		randomWord := randomstring.HumanFriendlyEnglishString(random.Intn(maxCharactersPerWord))
+		randomWord := randomstring.HumanFriendlyEnglishString(randomMessage.Intn(maxCharactersPerWord))
 		sb.WriteString(randomWord)
 	}
 

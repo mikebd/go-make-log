@@ -5,10 +5,9 @@ import (
 )
 
 func JsonLogLine() string {
-	// TODO: Randomize level
 	result, _ := json.Marshal(map[string]interface{}{
 		"timestamp": timestamp(),
-		"level":     "info",
+		"level":     level(),
 		"message":   message(),
 	})
 
