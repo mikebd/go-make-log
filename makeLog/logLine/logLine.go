@@ -3,6 +3,7 @@ package logLine
 import (
 	"encoding/json"
 	"github.com/itchyny/timefmt-go"
+	"github.com/xyproto/randomstring"
 	"time"
 )
 
@@ -16,6 +17,10 @@ func JsonLogLine() string {
 	})
 
 	return string(result)
+}
+
+func init() {
+	randomstring.Seed()
 }
 
 func timestamp() string {
