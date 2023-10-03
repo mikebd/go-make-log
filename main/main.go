@@ -40,12 +40,10 @@ func initializeLogging(logTimestamps bool) {
 func validateUsage(args *config.Arguments) {
 	var invalidUsage bool
 
-	/*
-		if len(args.MandatoryStringArgument) == 0 {
-			invalidUsage = true
-			log.Println("Missing mandatory command line argument: -arg")
-		}
-	*/
+	if len(args.OutputFilename) == 0 {
+		invalidUsage = true
+		log.Println("Missing output filename command line argument: -o <filename>")
+	}
 
 	if invalidUsage {
 		flag.Usage()

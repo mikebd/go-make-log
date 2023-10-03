@@ -11,4 +11,4 @@ ADD makeLog ./makeLog
 
 RUN go build -o go-make-log ./main
 
-CMD ["./go-make-log"]
+ENTRYPOINT ["./go-make-log"]

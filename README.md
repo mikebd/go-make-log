@@ -5,9 +5,7 @@ Generate fake application log files (e.g. as input to log processors)
 ## Running in Docker
 
 * `docker build -t go-make-log .` - Build the Docker image
-* `docker run go-make-log` - Run without arguments<br/>
-  OR <br/>
-  `docker run go-make-log /app/go-make-log <args>` - Run with the given arguments
+* `docker run go-make-log <args>` - Run with the given arguments
 
 ## Running Locally
 
@@ -19,3 +17,4 @@ Generate fake application log files (e.g. as input to log processors)
 |------------------|---------------------------|
 | `-h` \| `--help` | Print the help message    |
 | `-lt`            | Log with timestamps (UTC) |
+| `-o`             | Output filename           |
