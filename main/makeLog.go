@@ -8,7 +8,8 @@ import (
 func makeLog(args arguments) error {
 	randomstring.Seed()
 	// TODO: Argument for minimum size of log file to create
-	log.Println(jsonLogLine())
-	log.Println(jsonLogLine())
+	for i := 1; i < 500; i++ {
+		log.Println(jsonLogLine())
+	}
 	return nil
 }
