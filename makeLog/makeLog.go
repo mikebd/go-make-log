@@ -7,10 +7,10 @@ import (
 	"log"
 )
 
-func MakeLog(args config.Arguments) error {
+func MakeLog(args *config.Arguments) error {
 	randomstring.Seed()
 	// TODO: Argument for minimum size of log file to create
-	for i := 1; i < 500; i++ {
+	for i := 1; i < 10; i++ {
 		log.Println(logLine.JsonLogLine())
 	}
 	return nil

@@ -13,16 +13,16 @@ func main() {
 
 	args := config.ParseArguments()
 	initializeLogging(args.LogTimestamps)
-	validateUsage(args)
+	validateUsage(&args)
 
-	err := run(args)
+	err := run(&args)
 	if err != nil {
 		log.Println(err)
 		os.Exit(1)
 	}
 }
 
-func run(args config.Arguments) error {
+func run(args *config.Arguments) error {
 	log.Println("Running:", os.Args)
 
 	return makeLog.MakeLog(args)
@@ -37,11 +37,11 @@ func initializeLogging(logTimestamps bool) {
 	log.SetOutput(os.Stdout)
 }
 
-func validateUsage(args config.Arguments) {
+func validateUsage(args *config.Arguments) {
 	var invalidUsage bool
 
 	/*
-		if len(args.mandatoryStringArgument) == 0 {
+		if len(args.MandatoryStringArgument) == 0 {
 			invalidUsage = true
 			log.Println("Missing mandatory command line argument: -arg")
 		}
