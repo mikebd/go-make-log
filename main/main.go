@@ -23,9 +23,7 @@ func main() {
 func run(args arguments) error {
 	log.Println("Running:", os.Args)
 
-	// TODO: Do something useful here
-
-	return nil
+	return makeLog(args)
 }
 
 func initializeLogging(logTimestamps bool) {
