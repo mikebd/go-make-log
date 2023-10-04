@@ -1,6 +1,10 @@
 # go-make-log
 
-Generate fake application log files (e.g. as input to log processors)
+Generate fake application log files (e.g. as input to log processors).
+
+For safety, this will not overwrite an existing file.
+
+Warning: this does not check if disk space will be exhausted.
 
 ## Running in Docker
 
