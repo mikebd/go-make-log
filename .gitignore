@@ -24,3 +24,5 @@ go.work
 .editorconfig
 
 go-make-log
+log.*
+output.*

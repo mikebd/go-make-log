@@ -1,6 +1,7 @@
 package makeLog
 
 import (
+	"github.com/alecthomas/units"
 	"go-make-log/config"
 	"go-make-log/makeLog/logLine"
 	"log"
@@ -36,12 +37,20 @@ func MakeLog(args *config.Arguments) error {
 }
 
 func writeLogLines(args *config.Arguments, file *os.File, logGenerator logLine.LogGenerator) error {
-	// TODO: Argument for minimum size of log file to create
-
 	newline := []byte{'\n'}
 
-	for i := 1; i < 10; i++ {
-		_, err := file.WriteString(logGenerator())
+	minSize, err := units.ParseStrictBytes(args.Size)
+	if err != nil {
+		return err
+	}
+
+	currentSize := int64(0)
+
+	for currentSize < minSize {
+		line := logGenerator()
+		currentSize += int64(len(line) + len(newline))
+
+		_, err := file.WriteString(line)
 		if err != nil {
 			return err
 		}
