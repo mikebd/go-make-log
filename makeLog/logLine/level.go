@@ -13,6 +13,16 @@ var freqLevel = map[string]int{
 	"fatal": 1,
 }
 
+var maxLevelLength = func() int {
+	n := 0
+	for k := range freqLevel {
+		if len(k) > n {
+			n = len(k)
+		}
+	}
+	return n
+}()
+
 var randomLevel *rand.Rand
 
 func init() {

@@ -13,8 +13,9 @@ Generate fake application log files (e.g. as input to log processors)
 
 ## Arguments
 
-| Argument         | Description               |
-|------------------|---------------------------|
-| `-h` \| `--help` | Print the help message    |
-| `-lt`            | Log with timestamps (UTC) |
-| `-o filename`    | Output filename           |
+| Argument                | Description                       |
+|-------------------------|-----------------------------------|
+| `-h` \| `--help`        | Print the help message            |
+| `-lt`                   | Log with timestamps (UTC)         |
+| `-f <delimited\|json>`  | Output format (default delimited) |
+| `-o filename`           | Output filename                   |
