@@ -6,7 +6,6 @@ import (
 )
 
 var maxTimestampLength = func() int {
-	println("maxTimestampLength")
 	return len("2023-10-03T23:30:35.102988Z")
 }()
 
