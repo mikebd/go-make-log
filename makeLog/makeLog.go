@@ -11,7 +11,7 @@ func MakeLog(args *config.Arguments) error {
 	// TODO: Argument for minimum size of log file to create
 	// TODO: Use args.OutputFilename as output file
 
-	var lineGenerator = func() func() string {
+	logGenerator := func() logLine.LogGenerator {
 		if strings.EqualFold(args.Format, "json") {
 			return logLine.JsonLogLine
 		}
@@ -19,7 +19,7 @@ func MakeLog(args *config.Arguments) error {
 	}()
 
 	for i := 1; i < 10; i++ {
-		log.Println(lineGenerator())
+		log.Println(logGenerator())
 	}
 	return nil
 }

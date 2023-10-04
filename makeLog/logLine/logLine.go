@@ -5,6 +5,9 @@ import (
 	"strings"
 )
 
+// LogGenerator is a function that returns a log line
+type LogGenerator func() string
+
 const delimiter = "|"
 
 // DelimitedLogLine returns a log line in the format:
