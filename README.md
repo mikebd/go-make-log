@@ -63,6 +63,10 @@ $ head -n 3 log.txt
 
 * `go run ./main <args>` - Run the main.go file with the given arguments
 
+## Run Unit Tests
+
+* `go test ./... -count=1` - Run all unit tests
+
 ## Arguments
 
 | Argument               | Description                        |
