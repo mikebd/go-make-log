@@ -6,7 +6,7 @@ import (
 )
 
 func Test_multipleConsecutiveSpaces(t *testing.T) {
-	// Debug issue: Unsure why we sometimes get multiple consecutive spaces
+	// Resolved issue: Unsure why we sometimes get multiple consecutive spaces
 
 	for i := 0; i < 100; i++ {
 		message := message()

@@ -20,15 +20,21 @@ func init() {
 }
 
 func message() string {
-	// TODO: Unsure why we sometimes get multiple consecutive spaces
 	var sb strings.Builder
 	sb.Grow((maxCharactersPerWord + 1) * maxWordsPerMessage)
+
+	wordGenerator := func() string {
+		return randomstring.HumanFriendlyEnglishString(randomMessage.Intn(maxCharactersPerWord))
+	}
 
 	for i := 0; i < maxWordsPerMessage; i++ {
 		if i > 0 {
 			sb.WriteByte(' ')
 		}
-		randomWord := randomstring.HumanFriendlyEnglishString(randomMessage.Intn(maxCharactersPerWord))
+		randomWord := wordGenerator()
+		for randomWord == "" {
+			randomWord = wordGenerator()
+		}
 		sb.WriteString(randomWord)
 	}
 
