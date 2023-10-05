@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"github.com/alecthomas/units"
 	"go-make-log/config"
 	"go-make-log/makeLog"
 	"log"
@@ -43,6 +44,12 @@ func validateUsage(args *config.Arguments) {
 	if len(args.OutputFilename) == 0 {
 		invalidUsage = true
 		log.Println("Missing output filename command line argument: -o <filename>")
+	}
+
+	_, err := units.ParseStrictBytes(args.Size)
+	if err != nil {
+		invalidUsage = true
+		log.Println("Invalid size command line argument: -s <size>\n", err)
 	}
 
 	if invalidUsage {
