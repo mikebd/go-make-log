@@ -1,6 +1,7 @@
 # go-make-log
 
 Generate fake application log files (e.g. as input to log processors).
+This can be used to stress test the REST `/var/log` reader [go-read-var-log](https://github.com/mikebd/go-read-var-log).
 
 For safety, this will not overwrite an existing file.
 
