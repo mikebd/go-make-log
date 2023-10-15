@@ -5,6 +5,7 @@ import (
 )
 
 type Arguments struct {
+	LineNumber     bool
 	LogTimestamps  bool
 	Format         string
 	OutputFilename string
@@ -14,6 +15,7 @@ type Arguments struct {
 func ParseArguments() Arguments {
 	args := Arguments{}
 
+	flag.BoolVar(&args.LineNumber, "l", false, "Add line number to each log event")
 	flag.BoolVar(&args.LogTimestamps, "lt", false, "Log timestamps (UTC)")
 	flag.StringVar(&args.Format, "f", "delimited", "Output format (delimited, json)")
 	flag.StringVar(&args.OutputFilename, "o", "", "Output filename")

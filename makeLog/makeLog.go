@@ -44,10 +44,14 @@ func writeLogLines(args *config.Arguments, file *os.File, logGenerator logLine.L
 		return err
 	}
 
+	currentLine := int64(0)
 	currentSize := int64(0)
 
 	for currentSize < minSize {
-		line := logGenerator()
+		if args.LineNumber {
+			currentLine++
+		}
+		line := logGenerator(currentLine)
 		currentSize += int64(len(line) + len(newline))
 
 		_, err := file.WriteString(line)

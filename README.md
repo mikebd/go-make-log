@@ -73,6 +73,7 @@ $ head -n 3 log.txt
 | Argument               | Description                        |
 |------------------------|------------------------------------|
 | `-h` \| `--help`       | Print the help message             |
+| `-l`                   | Add line number to each log event  |
 | `-lt`                  | Log with timestamps (UTC)          |
 | `-f <delimited\|json>` | Output format (default delimited)  |
 | `-o <filename>`        | Output filename                    |
